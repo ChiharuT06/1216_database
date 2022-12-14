@@ -30,7 +30,7 @@
         <div class="jumbotron">
             <fieldset>
                 <legend>今日はどんな１日だった？</legend>
-                <label>日付<input type="date" name="day"></label><br>
+                <label>日付<input type="date" name="date"></label><br>
                 <label>ひとこと<textArea name="content" rows="4" cols="40"></textArea></label><br>
                 <label>星の数
                   <select name="level">

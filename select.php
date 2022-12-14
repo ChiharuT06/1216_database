@@ -8,13 +8,13 @@ function h($str){
 //1.  DB接続します
 try {
   //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
+  $pdo = new PDO('mysql:dbname=profile;charset=utf8;host=localhost','root','');
 } catch (PDOException $e) {
   exit('DBConnectError'.$e->getMessage());
 }
 
 //２．データ取得SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_an_table;");
+$stmt = $pdo->prepare("SELECT * FROM stars_table;");
 $status = $stmt->execute();
 
 //３．データ表示
@@ -30,7 +30,7 @@ if ($status==false) {
   //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     //$stmt->fetch 1行取って来たものを$resultに返す
-    $view .= '<p>'.$result['id'].':'.h($result['name']).'/'.h($result['email']).'</p>';
+    $view .= '<p>'.$result['id'].':'.h($result['indate']).'/'.h($result['text']).'/'.h($result['level']).'</p>';
     // [ ] ⇒配列
     //.= ⇒ 結果を追加していく
   }
@@ -45,7 +45,7 @@ if ($status==false) {
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>フリーアンケート表示</title>
+<title>まいにちのきろく</title>
 <link rel="stylesheet" href="css/range.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style>div{padding: 10px;font-size:16px;}</style>
