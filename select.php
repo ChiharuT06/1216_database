@@ -34,7 +34,7 @@ if ($status==false) {
     // [ ] ⇒配列
     //.= ⇒ 結果を追加していく
     $view .="<p>";
-    $view .='<a href="u_view.php?id='.$result["id"].'>';//中で""を使うことが分かっている場合は''で囲んで文字列として認識させる
+    $view .='<a href="u_view.php? id='.$result["id"].'>';//中で""を使うことが分かっている場合は''で囲んで文字列として認識させる
     $view .= $result["date"]." : ".$result["level"]." : ".$result["text"];
     //↑ここはVALUEの名前を渡す
     $view .="</a>";
