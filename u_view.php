@@ -19,6 +19,7 @@ $stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $status = $stmt->execute();//実行する
 
 
+
 //4.データ表示
 $view="";
 if($status==false) {
