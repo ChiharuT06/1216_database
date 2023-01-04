@@ -1,8 +1,8 @@
 <?php
 //1.GETでid値を取得
 $id = $_GET["id"];
-echo $id;
-exit;
+//echo $id;
+//exit;
 
 //2.DB接続など
  try {
@@ -13,7 +13,7 @@ exit;
 
 
 //3.
-$sql = "SELECT * FROM stars_table WHERE id=id";
+$sql = 'SELECT * FROM stars_table WHERE id=:id';
 $stmt = $pdo->prepare($sql);//prepareメソッドに渡す
 $stmt->bindValue(':id', $id, PDO::PARAM_STR);
 $status = $stmt->execute();//実行する
@@ -57,12 +57,12 @@ if($status==false) {
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<form method="post" action="insert.php">
+<form method="POST" action="update.php">
   <div class="jumbotron">
    <fieldset>
                 <legend>今日はどんな１日だった？</legend>
                 <label>日付<input type="date" name="date" value="<?=$row["date"]?>"></label><br>
-                <label>ひとこと<textArea name="content"  rows="4" cols="40"><?=$row["content"]?></textArea></label><br>
+                <label>ひとこと<textArea name="content" rows="4" cols="40"><?=$row["content"]?></textArea></label><br>
                 <label>星の数
                   <select name="level" value="<?=$row["level"]?>">
                     <option value="1">1</option>
@@ -72,6 +72,7 @@ if($status==false) {
                     <option value="5">5</option>
                   </select>
                 </label><br>
+                <input type="hidden" name="id"value="<?= $row ['id'] ?>"></label><br>
                 <input type="submit" value="送信">
     </fieldset>
   </div>
