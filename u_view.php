@@ -62,7 +62,7 @@ if($status==false) {
    <fieldset>
                 <legend>今日はどんな１日だった？</legend>
                 <label>日付<input type="date" name="date" value="<?=$row["date"]?>"></label><br>
-                <label>ひとこと<textArea name="content" rows="4" cols="40"><?=$row["content"]?></textArea></label><br>
+                <label>ひとこと<textArea name="content" rows="4" cols="40"><?=$row["text"]?></textArea></label><br>
                 <label>星の数
                   <select name="level" value="<?=$row["level"]?>">
                     <option value="1">1</option>

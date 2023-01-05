@@ -1,0 +1,14 @@
+1.index.phpで入力フォームを作る{HTMLのみ)
+
+2.insert.php
+  ・index.phpの情報をPOSTで取得
+  ・My SQLへ接続
+  ・セキュリティの為bindValueを用いる
+  ・Locationを要求して、index.phpを受け取る
+  (index.phpへリダイレクトする)
+
+
+3.select.php
+  ・detail.phpにリンクする(変更)
+  → update.phpにPOSTする
+  ・delete.phpにリンクする(削除)
