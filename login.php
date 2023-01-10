@@ -18,22 +18,36 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-default">LOGIN</nav>
+        <nav class="navbar navbar-default">ログイン画面</nav>
     </header>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">データ登録</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- lLOGINogin_act.php は認証処理用のPHPです。 -->
-    <form name="form1" action="login_act.php" method="post">
-        ID:<input type="text" name="lid" />
-        PW:<input type="password" name="lpw" />
-        <input type="submit" value="LOGIN" />
+    
+
+
+ <!--既存ユーザーログインフォーム-->
+
+   <form name="form1" action="login_act.php" method="post">
+       <div class="user_login">
+           <fieldset>
+           <legend>既存ユーザーはこちらからログイン</legend>
+                <label>ID:<input type="text" name="lid" /></label><br>
+                <label>PW:<input type="password" name="lpw" /></label><br>
+        <input type="submit" value="ログイン" />
+        </fieldset>
+    </div>
+    </form>
+  
+<!--新規登録フォーム-->
+
+    <form method="post" action="user_act.php">
+        <div class="register">
+            <fieldset>
+                <legend>新規ユーザーはこちらから登録</legend>
+                <label>名前<input type="name" name="name"></label><br>
+                <label>ログインID<input type="text" name="lid"></label><br>
+                <label>パスワード<input type="text" name="lpw"></label><br>                
+                <input type="submit" value="登録">
+            </fieldset>
+        </div>
     </form>
 
 
