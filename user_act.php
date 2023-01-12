@@ -34,7 +34,7 @@ if($status === false){
     $error = $stmt->errorInfo();
     exit('ErrorMessage:'.$error[2]);
   }else{
-    //５．成功したらselect.phpへ遷移
+    //５．成功したらindex.phpへ遷移
      header('Location:index.php'); 
    
   }
